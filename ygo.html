@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YGO Purrely Combos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .combo, .steps {
+            display: none;
+        }
+        .combo {
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+        .combo h3 {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>YGO Purrely Combos</h1>
+    <div>
+        <label><input type="checkbox" id="happyMemory"> Happy Memory</label><br>
+        <label><input type="checkbox" id="sleepyMemory"> Sleepy Memory</label><br>
+        <label><input type="checkbox" id="deliciousMemory"> Delicious Memory</label><br>
+        <label><input type="checkbox" id="prettyMemory"> Pretty Memory</label><br>
+        <label><input type="checkbox" id="purrely"> Purrely</label><br>
+        <label><input type="checkbox" id="purrelyly"> Purrelyly</label><br>
+        <label><input type="checkbox" id="myFriendPurrely"> My Friend Purrely</label><br>
+    </div>
+    <div id="results">
+        <h2>Relevant Combos</h2>
+        <div id="combo1" class="combo">
+            <h3>Noir + Leap (Sleepy Memory)</h3>
+            <p class="steps">
+                1. Use Sleepy, discard 1, SS Black Cat.<br>
+                2. Cat effect to add MFP.<br>
+                3. MFP activate and search 2x Sleepy, 1x Delicious.<br>
+                4. Activate Black Cat to target sleepy from GY. Turn to Epur Noir.<br>
+                5. Use Sleepy Memory in hand, chain Noir to absorb. Set leap.
+            </p>
+        </div>
+        <div id="combo2" class="combo">
+            <h3>Noir + ~ (My Friend Purrely, 1 Memory)</h3>
+            <p class="steps">
+                1. MFP, search 3x Street.<br>
+                2. Activate Street, activate QP spell in hand.<br>
+                3. SS Black Cat, search White Cat.<br>
+                4. NS White Cat, search for luck.<br>
+                5. Target QP spell in GY on Black Cat for board break.
+            </p>
+        </div>
+        <div id="combo3" class="combo">
+            <h3>Noir + ~ (My Friend Purrely)</h3>
+            <p class="steps">
+                1. Search 3x Sleepy.<br>
+                2. Sleepy to SS Black Cat.<br>
+                3. If you are interrupted, any hand trap body NS will make Little Knight S:P.<br>
+                4. Black Cat search White Cat.<br>
+                5. NS White Cat, search for luck.
+            </p>
+        </div>
+        <div id="combo4" class="combo">
+            <h3>Noir + S:P (1 Normal Summon, 1 Memory)</h3>
+            <p class="steps">
+                1. Black Cat searches MFP, White Cat searches any QP spell you can get.<br>
+                2. If Delicious not in hand, use MFP to search it instead of Sleepy x3.<br>
+                3. NS Cat. Activate effect for extra card.<br>
+                4. Use Memory from hand, discard 1.<br>
+                5. SS other cat, activate effect for extra card.<br>
+                6. Set MFP. Black Cat effect > Delicious in GY > Plump.<br>
+                7. Swap #4 and #5 if no Delicious open.<br>
+                8. Use MFP, search Sleepy x3 if didn't start with Delicious.<br>
+                9. Activate Memory, chain Plump. Discard once again and SS White Cat for search.<br>
+                10. At this point, chain as many Memory as possible. Ignore discards.<br>
+                11. Use Plump effect to attach 2 spells/traps.<br>
+                12. Plump > Expur Noir.<br>
+                13. White Cat + White Cat > S:P Little Knight / Robin.
+            </p>
+        </div>
+        <div id="combo5" class="combo">
+            <h3>Noir + Any other Purrely XYZ (Purrely, Purrelyly, 2 Memories)</h3>
+            <p class="steps">
+                1. NS White Cat. Grab free spell.<br>
+                2. Use a Memory. Discard 1 to SS Black Cat. Search MFP.<br>
+                3. MFP 3x/2x Sleepy, 1x Delicious.<br>
+                4. If you haven't used a Sleepy already, use one now and do not discard, just to get in the GY. Alternatively, you can use White Cat for Epur Noir and Black Cat for Plump/Beauty.<br>
+                5. Black Cat effect > target Sleepy in GY for Epur Noir.<br>
+                6. Use Memory in hand, absorb with Epur Noir, set Leap.<br>
+                7. Use any Memory in hand with the White Cat effect to get another Epur body. (Plump/Beauty/Noir).<br>
+                8. End turn.
+            </p>
+        </div>
+        <div id="combo6" class="combo">
+            <h3>Noir (4) + Leap (Sleepy Memory, Any Memory)</h3>
+            <p class="steps">
+                1. Use Sleepy, summon Black Cat.<br>
+                2. Search MFP.<br>
+                3. Activate MFP, search 3x Street.<br>
+                4. Activate Street.<br>
+                5. Activate Black Cat, target Sleepy in GY, Epur Noir.<br>
+                6. Use extra Memory, chain Noir to set Leap.<br>
+                7. Field Spell Sleepy Memory for more draw.
+            </p>
+        </div>
+    </div>
+    <script>
+        document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+            checkbox.addEventListener('change', updateResults);
+        });
+
+        document.querySelectorAll('.combo').forEach(combo => {
+            combo.addEventListener('click', function() {
+                const steps = this.querySelector('.steps');
+                steps.style.display = steps.style.display === 'block' ? 'none' : 'block';
+            });
+        });
+
+        function updateResults() {
+            const happyMemory = document.getElementById('happyMemory').checked;
+            const sleepyMemory = document.getElementById('sleepyMemory').checked;
+            const deliciousMemory = document.getElementById('deliciousMemory').checked;
+            const prettyMemory = document.getElementById('prettyMemory').checked;
+            const purrely = document.getElementById('purrely').checked;
+            const purrelyly = document.getElementById('purrelyly').checked;
+            const myFriendPurrely = document.getElementById('myFriendPurrely').checked;
+
+            document.querySelectorAll('.combo').forEach(combo => {
+                combo.style.display = 'none';
+            });
+
+            // Logic matching the spreadsheet formulas
+            if (sleepyMemory) {
+                document.getElementById('combo1').style.display = 'block';
+            }
+            if (myFriendPurrely && (happyMemory || sleepyMemory || deliciousMemory || prettyMemory || purrely || purrelyly)) {
+                document.getElementById('combo2').style.display = 'block';
+            }
+            if (myFriendPurrely) {
+                document.getElementById('combo3').style.display = 'block';
+            }
+            if ((purrely || purrelyly) && (happyMemory || sleepyMemory || deliciousMemory || prettyMemory)) {
+                document.getElementById('combo4').style.display = 'block';
+            }
+            if (purrely && purrelyly && ((happyMemory + sleepyMemory + deliciousMemory + prettyMemory) >= 2)) {
+                document.getElementById('combo5').style.display = 'block';
+            }
+            if (sleepyMemory && (happyMemory || sleepyMemory || deliciousMemory || prettyMemory)) {
+                document.getElementById('combo6').style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>
