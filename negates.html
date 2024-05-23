@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Negates by Archetype</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        .archetype {
+            margin-bottom: 20px;
+            cursor: pointer;
+            background-color: #fff;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+        .archetype:hover {
+            background-color: #f0f0f0;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .negates {
+            display: none;
+            margin-top: 10px;
+            font-size: 0.9em;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <h1>Negates by Archetype</h1>
+    <div id="archetypes">
+        <div class="archetype">
+            <h3>Rescue Ace</h3>
+            <p class="negates">
+                1. Negate Turbulence to avoid set 4<br>
+                2. Negate Air Lifter to prevent extender (only if you have two negates, always prioritize Turbulence).
+            </p>
+        </div>
+        <div class="archetype">
+            <h3>Swordsoul</h3>
+            <p class="negates">
+                1. Negate Mo'ye
+            </p>
+        </div>
+        <div class="archetype">
+            <h3>Snake-Eyes</h3>
+            <p class="negates">
+                1. Negate Ash's 2nd effect
+            </p>
+        </div>
+        <div class="archetype">
+            <h3>Purrely</h3>
+            <p class="negates">
+                1. Negate Black Cat's 2nd effect to target GY spell to XYZ
+            </p>
+        </div>
+        <div class="archetype">
+            <h3>Tearlaments</h3>
+            <p class="negates">
+                1. Negate Kitkallos
+            </p>
+        </div>
+        <div class="archetype">
+            <h3>Traptrix</h3>
+            <p class="negates">
+                1. Negate Traptrix Sera (immune to Imperm)<br>
+                2. Negate the level 4 engine monsters.
+            </p>
+        </div>
+        <div class="archetype">
+            <h3>Dinos</h3>
+            <p class="negates">
+                1. Negate Oviraptor<br>
+                2. Negate Misc if you have an interrupt for it's effect
+            </p>
+        </div>
+    </div>
+    <script>
+        document.querySelectorAll('.archetype').forEach(archetype => {
+            archetype.addEventListener('click', function() {
+                const negates = this.querySelector('.negates');
+                negates.style.display = negates.style.display === 'block' ? 'none' : 'block';
+            });
+        });
+    </script>
+</body>
+</html>
