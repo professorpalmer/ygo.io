@@ -8,16 +8,31 @@
         body {
             font-family: Arial, sans-serif;
             padding: 20px;
-        }
-        .combo, .steps {
-            display: none;
+            background-color: #f9f9f9;
         }
         .combo {
             margin-bottom: 20px;
             cursor: pointer;
+            background-color: #fff;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+        .combo:hover {
+            background-color: #f0f0f0;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
         .combo h3 {
             margin: 0;
+            font-size: 1.2em;
+            color: #333;
+        }
+        .steps {
+            display: none;
+            margin-top: 10px;
+            font-size: 0.9em;
+            color: #555;
         }
     </style>
 </head>
@@ -130,7 +145,7 @@
             const myFriendPurrely = document.getElementById('myFriendPurrely').checked;
 
             document.querySelectorAll('.combo').forEach(combo => {
-                combo.style.display = 'none';
+                combo.style.display = 'none';  // Ensure all combos are hidden initially
             });
 
             // Logic matching the spreadsheet formulas
@@ -153,6 +168,9 @@
                 document.getElementById('combo6').style.display = 'block';
             }
         }
+
+        // Call updateResults on page load to set initial state correctly
+        updateResults();
     </script>
 </body>
 </html>
