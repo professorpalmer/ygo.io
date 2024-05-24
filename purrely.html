@@ -125,6 +125,17 @@
                 7. Field Spell Sleepy Memory for more draw.
             </p>
         </div>
+        <div id="combo7" class="combo">
+            <h3>Noir (1~)</h3>
+            <p class="steps">
+                1. NS Black Cat, search MFP.<br>
+                2. MFP search 3x Sleepy Memory.<br>
+                3. Use Sleepy Memory, discard 1 and SS white cat. Search for QP spells.<br>
+                4. Black Cat effect to target Sleepy in GY. SS Epur Noir.<br>
+                - Use any further QP spells you fished from the White Cat effect.<br>
+                - If you have more QP spells, set the trap from the Noir effect.
+            </p>
+        </div>
     </div>
     <div class="otk-section">
         <label><input type="checkbox" id="otk"> OTK (One Turn Kill)</label><br>
@@ -192,6 +203,9 @@
             }
             if (sleepyMemory && (happyMemory || sleepyMemory || deliciousMemory || prettyMemory)) {
                 document.getElementById('combo6').style.display = 'block';
+            }
+            if (purrelyly) {
+                document.getElementById('combo7').style.display = 'block';
             }
             if (otk) {
                 document.getElementById('otkCombo').style.display = 'block';
