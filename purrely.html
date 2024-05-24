@@ -34,6 +34,9 @@
             font-size: 0.9em;
             color: #555;
         }
+        .otk-section {
+            margin-top: 50px;
+        }
     </style>
 </head>
 <body>
@@ -123,6 +126,28 @@
             </p>
         </div>
     </div>
+    <div class="otk-section">
+        <label><input type="checkbox" id="otk"> OTK (One Turn Kill)</label><br>
+        <div id="otkCombo" class="combo">
+            <h3>OTK Strategy</h3>
+            <p class="steps">
+                1. Black cat > Search My Friend Purrely<br>
+                2. Activate MFP and reveal 3x Happy Memory<br>
+                3. Activate Happy Memory, don't discard just need in GY.<br>
+                4. Black cat > Happy Mem > Epur Happiness<br>
+                <strong>BATTLE PHASE (ignore discards)</strong><br>
+                5. Attack any monster<br>
+                6. Trigger Epur Happiness, search delicious memory.<br>
+                7. Choose lowest attack monster for the attack down effect from Epur Happiness.<br>
+                8. Use Delicious Memory on lowest attack monster, preventing it from destruction.<br>
+                9. Attack the monster. Draw again.<br>
+                10. Attack again, trigger again, search happy memory, target same monster with attack down.<br>
+                11. Use Happy memory and chain to equip.<br>
+                12. Repeat 10 & 11 until dead.<br>
+                <strong>If you can't OTK, you can summon Expur Noir in MP2 onto Happiness since you should have 5 materials.</strong>
+            </p>
+        </div>
+    </div>
     <script>
         document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
             checkbox.addEventListener('change', updateResults);
@@ -143,6 +168,7 @@
             const purrely = document.getElementById('purrely').checked;
             const purrelyly = document.getElementById('purrelyly').checked;
             const myFriendPurrely = document.getElementById('myFriendPurrely').checked;
+            const otk = document.getElementById('otk').checked;
 
             document.querySelectorAll('.combo').forEach(combo => {
                 combo.style.display = 'none';  // Ensure all combos are hidden initially
@@ -166,6 +192,9 @@
             }
             if (sleepyMemory && (happyMemory || sleepyMemory || deliciousMemory || prettyMemory)) {
                 document.getElementById('combo6').style.display = 'block';
+            }
+            if (otk) {
+                document.getElementById('otkCombo').style.display = 'block';
             }
         }
 
