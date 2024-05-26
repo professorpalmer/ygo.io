@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YGO @Ignister Combos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        .combo {
+            margin-bottom: 20px;
+            cursor: pointer;
+            background-color: #fff;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+        .combo:hover {
+            background-color: #f0f0f0;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .combo h3 {
+            margin: 0;
+            font-size: 1.2em;
+            color: #333;
+        }
+        .steps {
+            display: none;
+            margin-top: 10px;
+            font-size: 0.9em;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <h1>YGO @Ignister Combos</h1>
+    <div>
+        <label><input type="checkbox" id="darkTemplar"> Dark Templar (Setup)</label><br>
+        <label><input type="checkbox" id="singularityDarkfluid"> Singularity + Darkfluid + Firewall (Mathmech @Ignister)</label><br>
+        <label><input type="checkbox" id="counteringNibiru"> Countering Nibiru (with access to Starter + Circular)</label><br>
+    </div>
+    <div id="results">
+        <h2>Relevant Combos</h2>
+        <div id="combo1" class="combo">
+            <h3>Dark Templar (Setup)</h3>
+            <p class="steps">
+                Usual setup:<br>
+                1. Normal Summon Achichi to search Pikari, or Normal Summon Pikari to search A.I. Meet You and use it to search Achichi.<br>
+                2. Link Summon Dark Infant @Ignister to search Ignister A.I.Land.<br>
+                3. Activate and use A.I.Land to Special Summon Pikari to search A.I. Meet You to search Doyon, or Achichi to search Doyon. If you already have access to Doyon, search whatever you need in the current situation.<br>
+                4. Link Summon Cyberse Wicckid.<br>
+                5. Use A.I.Land to Special Summon Doyon @Ignister to the zone Wicckid points to. Doyon adds back the monster you Normal Summoned. Wicckid banishes Dark Infant from your GY to search Bururu @Ignister.<br>
+                6. Link Summon Transcode Talker.<br>
+                7. Use A.I.Land to Special Summon Bururu and send Danmari @Ignister (or any other monster, if necessary).<br>
+                8. Transcode revives Wicckid.<br>
+                <!-- Additional steps for other scenarios -->
+            </p>
+        </div>
+        <div id="combo2" class="combo">
+            <h3>Singularity + Darkfluid + Firewall (Mathmech @Ignister)</h3>
+            <p class="steps">
+                Follow the setup combo, then:<br>
+                1. If you haven't, Xyz Summon Primathmech Alembertian. If that's the case, search Mathmech Circular.<br>
+                2. Link Summon Firewall Dragon Darkfluid to the zone Dark Infant @Ignister points to. Make sure to have Wind Pegasus (Synchro) and Alembertian (Xyz) in your GY so Darkfluid gains 2 counters.<br>
+                3. Use Circular to send Mathmech Sigma and Special Summon itself. Revive Sigma using its own effect. Circular searches Mathmech Equation.<br>
+                4. Use Dark Infant and another monster to Link Summon G Golem Crystal Heart in the left Extra Monster Zone (on top of where Dark Infant used to be) and revive Transcode.<br>
+                5. Link Summon Firewall Dragon to the zone Darkfluid and Crystal Heart point to and use Firewall's effect to add back two monsters from your GY.<br>
+                6. Activate Mathmech Equation to revive a Mathmech to the zone Firewall points to.<br>
+            </p>
+        </div>
+        <div id="combo3" class="combo">
+            <h3>Countering Nibiru (with access to Starter + Circular)</h3>
+            <p class="steps">
+                To counter Nibiru, you need to have a starter (Achichi/Pikari/A.I. Meet You) and Circular, or another card that (in tandem with the starter) can get you access to Circular (via Cynet Mining, or making Alembertian by overlaying Pikari and another Cyberse that has its Level turned to 4 by Pikari).<br>
+                1. If you have immediate access to Circular, follow the usual setup combo and hold onto it. Otherwise, the hand that you need to make Alembertian as your 5th Summon of the turn (so Nibiru can't be used before making Alembertian) requires 2 of 4 among Achichi/Pikari/Doyon/A.I. Meet You (Except Pikari + Doyon).<br>
+                2. Your Normal Summon ideally should be Achichi, subsequently, your 3rd Summon should be Pikari. If you Normal Summon Pikari, your 3rd Summon should be Achichi with A.I.dle Reborn in your hand (searched by Pikari).<br>
+                3. Aim to get Pikari and another Cyberse (If it is not Level 4, use Pikari's effect to modify its Level), then make Alembertian instantly. With this, you are guaranteed to have access to Circular when Nibiru is used.<br>
+                4. From there, follow the usual setup combo from Step 4 onwards.<br>
+                After Nibiru is used when Dark Templar resolves:<br>
+                5. Use Circular to send Sigma and Special Summon itself. Revive Sigma using its own effect.<br>
+                6. Circular searches Mathmech Equation.<br>
+                7. If you haven't, Xyz Summon Primathmech Alembertian. If that's the case, search Mathmech Subtraction and Special Summon it.<br>
+                8. Link Summon Crystal Heart to revive Transcode.<br>
+            </p>
+        </div>
+    </div>
+    <script>
+        document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                const combos = document.querySelectorAll('.combo');
+                combos.forEach(combo => {
+                    combo.style.display = 'none';
+                });
+                if (document.getElementById('darkTemplar').checked) {
+                    document.getElementById('combo1').style.display = 'block';
+                }
+                if (document.getElementById('singularityDarkfluid').checked) {
+                    document.getElementById('combo2').style.display = 'block';
+                }
+                if (document.getElementById('counteringNibiru').checked) {
+                    document.getElementById('combo3').style.display = 'block';
+                }
+            });
+        });
+
+        document.querySelectorAll('.combo').forEach(combo => {
+            combo.addEventListener('click', function() {
+                const steps = this.querySelector('.steps');
+                steps.style.display = steps.style.display === 'block' ? 'none' : 'block';
+            });
+        });
+    </script>
+</body>
+</html>
