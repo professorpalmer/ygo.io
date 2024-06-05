@@ -12,7 +12,7 @@
             padding: 0;
             display: flex;
             flex-direction: column;
-            justify-content: space-between; /* Ensures spacing between top and bottom sections */
+            align-items: center;
             height: 100vh; /* Full viewport height */
         }
 
@@ -20,7 +20,7 @@
             color: #6a0dad;
             font-size: 36px;
             margin-top: 50px;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             text-align: center;
             text-shadow: 2px 2px #cccccc;
         }
@@ -31,7 +31,7 @@
             color: white;
             cursor: pointer;
             font-size: 20px;
-            margin-bottom: 20px;
+            margin: 10px;
             padding: 12px 24px;
             text-align: center;
             text-decoration: none;
@@ -50,23 +50,33 @@
         }
 
         .container {
-            text-align: center;
-            margin-top: 20px; /* Adjusts the margin to move it closer to the title */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px; /* Adjusts the margin to move it closer to the title */
+        }
+
+        .button-group {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
         }
 
         .negates-container {
             text-align: center;
-            margin-top: 100px; /* Adjusts the margin to position it where the current row of deck combo buttons is */
+            margin-top: 20px; /* Adjusts the margin to position it below the deck combo buttons */
         }
     </style>
 </head>
 <body>
     <h1>YGO Deck Combo Links</h1>
     <div class="container">
-        <button onclick="window.location.href='purrely.html'">Purrely Deck Combos</button>
-        <button onclick="window.location.href='snakeeyes.html'">Snake-Eyes Deck Combos</button>
-        <button onclick="window.location.href='ignister.html'">Ignister Deck Combos</button>
-        <button onclick="window.location.href='memento.html'">Memento Deck Combos</button>
+        <div class="button-group">
+            <button onclick="window.location.href='purrely.html'">Purrely Deck Combos</button>
+            <button onclick="window.location.href='snakeeyes.html'">Snake-Eyes Deck Combos</button>
+            <button onclick="window.location.href='ignister.html'">Ignister Deck Combos</button>
+            <button onclick="window.location.href='memento.html'">Memento Deck Combos</button>
+        </div>
         <!-- Add more buttons here as you create new pages for different decks -->
     </div>
     <div class="negates-container">
