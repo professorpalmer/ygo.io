@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YGO Melffy Combos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        .combo {
+            margin-bottom: 20px;
+            cursor: pointer;
+            background-color: #fff;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+        .combo:hover {
+            background-color: #f0f0f0;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .combo h3 {
+            margin: 0;
+            font-size: 1.2em;
+            color: #333;
+        }
+        .combo .description {
+            display: block;
+            font-size: 0.9em;
+            color: #777;
+        }
+        .steps {
+            display: none;
+            margin-top: 10px;
+            font-size: 0.9em;
+            color: #555;
+        }
+        .special-note {
+            color: #FF4500; /* Orange color to highlight the special note */
+            font-style: italic;
+        }
+        .disabled {
+            opacity: 0.5;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>YGO Melffy Combos</h1>
+    <div>
+        <label><input type="checkbox" id="obedienceSchooled"> Obedience Schooled</label><br>
+        <label><input type="checkbox" id="wally"> Wally</label><br>
+        <label><input type="checkbox" id="puppy"> Puppy</label><br>
+        <label><input type="checkbox" id="rescueCat"> Rescue Cat</label><br>
+        <label><input type="checkbox" id="deepSeaDiva"> Deep Sea Diva</label>
+        <span class="special-note">*Only some lists run this card</span><br>
+    </div>
+    <div id="results">
+        <h2>Relevant Combos</h2>
+        <div id="obedienceSchooledCombo" class="combo" style="display:none;">
+            <h3>Obedience Schooled Combo</h3>
+            <span class="description">(Potential Endboards)</span>
+            <p class="steps">
+                1. Use Obedience Schooled.<br>
+                2. SS Wally, Kittytail, and any other third you prefer.<br>
+                3. Package all three into Joyous Melffy.<br>
+                **Toggle effect activations to "ON"**<br>
+                *End Turn*<br>
+                <b>4. In the draw phase</b>, Joyous effect to SS Kittytail + Wally.<br>
+                5. Kittytail effect targets the third beast you left in the GY. Send Peropero Cerperus to GY.<br>
+                - Whenever you take damage from battle/effect, you can banish Cerperus from the GY and pop one card on the field.<br>
+                - If/when Kittytail is destroyed by an opponent's card, you can search any follow up in your deck.<br>
+                <span id="commonSteps">
+                    <b>When triggered:</b><br>
+                    1. Wally SS Catty + Puppy.<br>
+                    2. Catty search Pinny.<br>
+                    3. Puppy SS Kalantosa, pop one card on the field.<br>
+                    4. Pinny effect SS self to board.<br>
+                    5. Pinny SS Accel Synchro using all Melffy in hand.<br>
+                    6. Accel Synchro effect > SS Pinny > Stardust Dragon.<br>
+                    7. Stardust Dragon effect into Satellite Warrior.<br>
+                    8. Satellite effect to pop 1~2 cards on the field, gaining attack for each one that is actually destroyed.<br>
+                    - Does not gain attack if the destruction does not resolve on the target.<br>
+                    - I.E. S:P or other effects
+                </span>
+            </p>
+        </div>
+        <div id="satelliteWarriorCombo" class="combo puppyCombo" style="display:none;">
+            <h3>Satellite Warrior Line</h3>
+            <span class="description">(Unaffected for summoned turn, 4500/2500, 1~2 targeted pops.)</span>
+            <p class="steps">
+                1. NS Puppy to bait handtraps and avoid SS in end phase.<br>
+                **End Turn**<br>
+                *When triggered:*<br>
+                2. Puppy SS Wally.<br>
+                3. Wally SS Catty + Rabby<br>
+                4. Catty search Pinny<br>
+                5. Pinny effect SS self to board.<br>
+                6. Pinny SS Accel Synchro using all Melffy in hand.<br>
+                7. Accel Synchro effect > SS Pinny > Stardust Dragon<br>
+                8. Stardust Dragon effect into Satellite Warrior.<br>
+                9. Satellite effect to pop 1~2 cards on the field, gaining attack for each one that is actually destroyed.<br>
+                - Does not gain attack if the destruction does not resolve on the target.<br>
+                - I.E. S:P or other effects
+            </p>
+        </div>
+        <div id="heraldOfArcLightCombo" class="combo puppyCombo" style="display:none;">
+            <h3>Herald of Arc Light</h3>
+            <span class="description">(1x omni negate, any cards moved from deck to GY are banished.)</span>
+            <p class="steps">
+                1. NS Puppy to bait handtraps and avoid SS in end phase.<br>
+                **End Turn**<br>
+                *When triggered:*<br>
+                2. Puppy SS Wally.<br>
+                3. Wally SS Catty + Rabby<br>
+                4. Catty search Hop-Ear Squadron.<br>
+                5. Hop Ear > Rabby.<br>
+                6. Herald of Arc Light
+            </p>
+        </div>
+        <div id="merryMelffysCombo" class="combo puppyCombo" style="display:none;">
+            <h3>Merry Melffys</h3>
+            <span class="description">(Bounce one monster to hand, SS Forest for /2000 body.)</span>
+            <p class="steps">
+                1. NS Puppy to bait handtraps and avoid SS in end phase.<br>
+                **End Turn**<br>
+                *When triggered:*<br>
+                2. Puppy SS Wally.<br>
+                3. Wally SS Catty + Rabby<br>
+                4. Catty search Hop-Ear Squadron.<br>
+                5. Hop Ear > Rabby.<br>
+                6. Herald of Arc Light
+            </p>
+        </div>
+        <div id="satelliteWarriorKalantosaCombo" class="combo wallyCombo" style="display:none;">
+            <h3>Satellite Warrior Line + Kalantosa</h3>
+            <span class="description">(Unaffected for summoned turn, 4500/2500, 1~2 targeted pops. Kalantosa SS pop any card on the field.)</span>
+            <p class="steps">
+                1. NS Wally to bait handtraps and avoid SS in end phase.<br>
+                2. **End Turn**<br>
+                *When triggered:*<br>
+                3. Wally SS Catty + Puppy<br>
+                4. Catty search Pinny<br>
+                5. Puppy SS Kalantosa, pop one card on the field.<br>
+                6. Pinny effect SS self to board.<br>
+                7. Pinny SS Accel Synchro using all Melffy in hand.<br>
+                8. Accel Synchro effect > SS Pinny > Stardust Dragon<br>
+                9. Stardust Dragon effect into Satellite Warrior.<br>
+                10. Satellite effect to pop 1~2 cards on the field, gaining attack for each one that is actually destroyed.<br>
+                - Does not gain attack if the destruction does not resolve on the target.<br>
+                - I.E. S:P or other effects
+            </p>
+        </div>
+        <div id="heraldOfArcLightKalantosaCombo" class="combo wallyCombo" style="display:none;">
+            <h3>Herald of the Arc Light + Kalantosa</h3>
+            <span class="description">(1x omni negate, any cards moved from deck to GY are banished. Kalantosa SS pop any card on the field.)</span>
+            <p class="steps">
+                1. NS Wally to bait handtraps and avoid SS in end phase.<br>
+                2. **End Turn**<br>
+                *When triggered:*<br>
+                3. Wally SS Catty + Puppy<br>
+                4. Catty searches Hop Ear Squadron.<br>
+                5. Puppy SS Kalantosa, pop one card on the field.<br>
+                6. Hop Ear Squadron effect > Kalantosa > Herald of the Arc Light
+            </p>
+        </div>
+        <div id="merryMelffysKalantosaCombo" class="combo wallyCombo" style="display:none;">
+            <h3>Merry Melffys > Forest Negate + Kalantosa</h3>
+            <span class="description">(Bounce one monster to hand, SS Forest for /2000 body + 1x permanent attack/effect negate. Kalantosa SS pop any card on the field.)</span>
+            <p class="steps">
+                1. NS Wally to bait handtraps and avoid SS in end phase.<br>
+                2. **End Turn**<br>
+                *When triggered:*<br>
+                3. Wally SS Catty + Puppy<br>
+                4. Catty search Pinny<br>
+                5. Pinny effect SS self to board.<br>
+                6. Pinny > Catty into Merry Melffys.<br>
+                7. Merry Melffys bounce one monster to hand on SS.<br>
+                8. Puppy effect to SS Kalantosa.<br>
+                - Chain 1<br>
+                9. Merry Melffys effect to SS Melffy of the Forest.<br>
+                - Chain 2<br>
+                10. Forest lands.<br>
+                11. Puppy to hand. SS Kalantosa.<br>
+                12. Kalantosa effect triggers. Pop one card on the field.<br>
+                13. Forest effect activates. Choose one target to permanently negate the attack/effects of.<br>
+                - Forest effect can only ever be C1. Due to this, to get max value you will need to pop 1 card and still have an enemy to negate. Typically, this means using Kalantosa on backrow or, ideally, when engine two bodies are on board.
+            </p>
+        </div>
+    </div>
+    <script>
+        const puppyCheckbox = document.getElementById('puppy');
+        const wallyCheckbox = document.getElementById('wally');
+        const obedienceSchooledCheckbox = document.getElementById('obedienceSchooled');
+
+        function updateComboVisibility() {
+            const puppyChecked = puppyCheckbox.checked;
+            const wallyChecked = wallyCheckbox.checked;
+            const obedienceSchooledChecked = obedienceSchooledCheckbox.checked;
+
+            const puppyCombos = document.querySelectorAll('.puppyCombo');
+            const wallyCombos = document.querySelectorAll('.wallyCombo');
+            const obedienceSchooledCombos = document.querySelectorAll('#obedienceSchooledCombo');
+
+            puppyCombos.forEach(combo => {
+                combo.style.display = puppyChecked ? 'block' : 'none';
+                combo.classList.toggle('disabled', puppyChecked && wallyChecked);
+            });
+
+            wallyCombos.forEach(combo => {
+                combo.style.display = wallyChecked ? 'block' : 'none';
+            });
+
+            obedienceSchooledCombos.forEach(combo => {
+                combo.style.display = obedienceSchooledChecked ? 'block' : 'none';
+                const commonSteps = combo.querySelector('#commonSteps');
+                commonSteps.style.display = obedienceSchooledChecked ? 'block' : 'none';
+            });
+
+            // Additional logic to handle clicks on disabled combos
+            document.querySelectorAll('.combo').forEach(combo => {
+                combo.addEventListener('click', function() {
+                    if (!this.classList.contains('disabled')) {
+                        const steps = this.querySelector('.steps');
+                        steps.style.display = steps.style.display === 'block' ? 'none' : 'block';
+                    }
+                });
+            });
+        }
+
+        function addCommonSteps(elementId) {
+            const commonSteps = `
+                <b>When triggered:</b><br>
+                1. Wally SS Catty + Puppy.<br>
+                2. Catty search Pinny.<br>
+                3. Puppy SS Kalantosa, pop one card on the field.<br>
+                4. Pinny effect SS self to board.<br>
+                5. Pinny SS Accel Synchro using all Melffy in hand.<br>
+                6. Accel Synchro effect > SS Pinny > Stardust Dragon.<br>
+                7. Stardust Dragon effect into Satellite Warrior.<br>
+                8. Satellite effect to pop 1~2 cards on the field, gaining attack for each one that is actually destroyed.<br>
+                - Does not gain attack if the destruction does not resolve on the target.<br>
+                - I.E. S:P or other effects
+            `;
+            document.getElementById(elementId).innerHTML = commonSteps;
+        }
+
+        puppyCheckbox.addEventListener('change', updateComboVisibility);
+        wallyCheckbox.addEventListener('change', updateComboVisibility);
+        obedienceSchooledCheckbox.addEventListener('change', updateComboVisibility);
+
+        // Initialize the common steps for the Obedience Schooled combo
+        addCommonSteps('commonSteps');
+
+        // Initial call to set visibility based on initial checkbox states
+        updateComboVisibility();
+    </script>
+</body>
+</html>
+
