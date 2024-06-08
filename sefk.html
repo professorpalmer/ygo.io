@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YGO Snake Eye Fire King Combos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        .combo {
+            margin-bottom: 20px;
+            cursor: pointer;
+            background-color: #fff;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+        .combo:hover {
+            background-color: #f0f0f0;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .combo h3 {
+            margin: 0;
+            font-size: 1.2em;
+            color: #333;
+        }
+        .steps {
+            display: none;
+            margin-top: 10px;
+            font-size: 0.9em;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <h1>YGO Snake Eye Fire King Combos</h1>
+    <div>
+        <label><input type="checkbox" id="blackWitch"> Black Witch</label><br>
+        <label><input type="checkbox" id="ash"> Ash</label><br>
+        <label><input type="checkbox" id="poplar"> Poplar</label><br>
+        <label><input type="checkbox" id="bonfire"> Bonfire</label><br>
+        <label><input type="checkbox" id="oneForOne"> One for One</label><br>
+        <label><input type="checkbox" id="wanted"> WANTED</label><br>
+        <label><input type="checkbox" id="ponix"> Ponix</label><br>
+        <label><input type="checkbox" id="arvata"> Arvata</label><br>
+    </div>
+    <div id="results">
+        <h2>Relevant Combos</h2>
+        <div id="combo1" class="combo">
+            <h3>4 Interruption</h3>
+            <p class="steps">
+                1. SS Witch from hand. Activate effect to search Spoils.<br>
+                2. Spoils > Witch > SS Ash<br>
+                3. Ash > Ponix. Ponix NS, search Sanc.<br>
+                4. Sanc activate, search Island.<br>
+                5. Island activate, search Garunix.<br>
+                6. Garunix Activate. SS, pop Kirin from deck/hand.<br>
+                7. SS Ponix from GY.<br>
+                8. Ash effect to send self + Ponix, SS Flamberg.<br>
+                9. Flamberg + Garunix into Wolf.<br>
+                10. Flamberg effect to SS Ponix + Ash (to the zone Wolf points to)<br>
+                11. Wolf effect to search Kirin.<br>
+                12. Ash into Linkuriboh. 3 bodies (Not Linkuriboh) into Princess.<br>
+                13. Princess effect SS Flamberg. Flamberg witch to trap zone.<br>
+                14. Linkuriboh + Princess into Amblowhale.<br>
+                <strong>End Turn</strong><br>
+                <strong>Opponent's Turn:</strong><br>
+                1. Flamberg SS Witch from trap zone. Chain 2 Kirin.<br>
+                2. Kirin SS self, sending Flamberg. Witch is SS.<br>
+                3. Garunix C1, Flamberg C2, Witch C3.<br>
+                - Witch sets a spell you prefer.<br>
+                - Flamberg SS Ponix + Ash<br>
+                - Garunix SS self.<br>
+                4. Garunix C1, Ponix C2, Ash C3<br>
+                - Ash searches (Oak, Kurikara, Poplar... depends on list)<br>
+                - Ponix searches Circle<br>
+                - Garunix sends Arvata to GY.<br>
+                5. Garunix + Kirin into Garunix Eternity XYZ. XYZ effect to destroy all monsters.<br>
+                6. Chain cover Whale effect with Witch.<br>
+                - Witch sends set spell you searched earlier with her effect to SS self.<br>
+                - Whale SS Wolf<br>
+                7. Princess pops Garunix XYZ + Opponent Monster<br>
+                8. Garunix from GY to SS Arvata + Kirin from GY.<br>
+                9. Kirin effect from GY to SS Ponix.
+            </p>
+        </div>
+        <div id="combo2" class="combo">
+            <h3>Amblowhale</h3>
+            <p class="steps">
+                1. NS Poplar to search Spoils.<br>
+                2. Link Poplar into Linkuriboh and set self in trap zone.<br>
+                3. Spoils > Poplar > SS Ponix.<br>
+                4. Ponix effect to search Sanc. Sanc sets Island.<br>
+                5. Island effect to destroy Ponix, search Garunix, and SS self.<br>
+                6. Garunix to destroy Arvata. GY effect to SS Ponix.<br>
+                7. Garunix + Ponix into Hiita.<br>
+                8. Hiita + Linkuriboh into Princess. SS Poplar.<br>
+                9. Poplar + Princess into whale.<br>
+                <strong>End Turn</strong><br>
+                <strong>Opponent's Turn:</strong><br>
+                1. Princess pops whale + 1 enemy monster, SS self.<br>
+                2. SS Hiita with Whale, SS Garunix with Garunix.<br>
+                3. Garunix sends Kirin to GY. Kirin SS Arvata and destroys one card on field.<br>
+                4. Arvata negates monster effect, sends Princess to GY.<br>
+                5. Banish Whale from GY to pop Arvata.<br>
+                6. Arvata from GY to SS Kirin. Sanc effect to XYZ Garunix + Kirin into Garunix XYZ. Destroys all monsters.
+            </p>
+        </div>
+    </div>
+    <script>
+        document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+            checkbox.addEventListener('change', updateResults);
+        });
+
+        document.querySelectorAll('.combo').forEach(combo => {
+            combo.addEventListener('click', function() {
+                const steps = this.querySelector('.steps');
+                steps.style.display = steps.style.display === 'block' ? 'none' : 'block';
+            });
+        });
+
+        function updateResults() {
+            const blackWitch = document.getElementById('blackWitch').checked;
+            const wanted = document.getElementById('wanted').checked;
+            const poplar = document.getElementById('poplar').checked;
+
+            document.querySelectorAll('.combo').forEach(combo => {
+                combo.style.display = 'none';
+            });
+
+            if (blackWitch || wanted) {
+                document.getElementById('combo1').style.display = 'block';
+            }
+            if (poplar) {
+                document.getElementById('combo2').style.display = 'block';
+            }
+        }
+
+        updateResults();
+    </script>
+</body>
+</html>
